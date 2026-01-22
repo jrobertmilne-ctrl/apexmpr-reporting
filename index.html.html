@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FY26 New MPR Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; padding: 20px; color: #333; }
+  .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+  
+  /* Headings */
+  h1 { text-align: center; color: #2c3e50; margin-bottom: 10px; }
+  h2 { background: #e9ecef; padding: 10px; border-left: 5px solid #0056b3; margin-top: 40px; font-size: 1.2rem; color: #0056b3; }
+  h3 { margin-top: 20px; font-size: 1rem; color: #555; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+  
+  /* Inputs */
+  .form-group { margin-bottom: 15px; }
+  label { font-weight: bold; display: block; margin-bottom: 5px; font-size: 0.95rem; }
+  input[type="text"], input[type="month"], select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+  textarea { height: 100px; resize: vertical; }
+  
+  /* Tables */
+  .table-wrapper { overflow-x: auto; margin-top: 10px; } 
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 600px; }
+  th, td { border: 1px solid #dee2e6; padding: 8px; text-align: center; vertical-align: middle; }
+  th { background-color: #0056b3; color: white; text-align: left; }
+  td:first-child { text-align: left; font-weight: 500; min-width: 200px; }
+  
+  /* Table Inputs */
+  input[type="number"] { width: 100%; border: 1px solid #eee; background: #f8f9fa; padding: 8px; text-align: center; }
+  input[type="number"]:focus { background: #e8f0fe; border-color: #0056b3; outline: none; }
+  
+  /* Radio & Checkbox Grids */
+  .radio-group { margin: 10px 0; }
+  .radio-group label { font-weight: normal; margin-right: 20px; display: inline-flex; align-items: center; cursor: pointer; }
+  .radio-group input { margin-right: 5px; }
+  
+  .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; margin-top: 10px; }
+  .checkbox-item { display: flex; align-items: flex-start; font-size: 0.9rem; line-height: 1.4; cursor: pointer; }
+  .checkbox-item input { margin-right: 10px; margin-top: 3px; transform: scale(1.2); flex-shrink: 0; }
+  
+  /* Submit Button */
+  .btn-submit { background-color: #28a745; color: white; width: 100%; padding: 15px; border: none; font-size: 18px; border-radius: 5px; cursor: pointer; margin-top: 10px; font-weight: bold; transition: background 0.2s; }
+  .btn-submit:hover { background-color: #218838; }
+  .btn-submit:disabled { background-color: #ccc; cursor: not-allowed; }
+  
+  #loading { display: none; text-align: center; margin-top: 15px; font-weight: bold; color: #0056b3; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>FY26 New MPR Template</h1>
+  <p style="text-align:center; color:#666;">Please fill out all sections relevant to the reporting month.</p>
+  
+  <form id="reportForm">
+
+    <div class="form-group">
+      <label>Reporting Month</label>
+      <select name="ReportingPeriod" required>
+        <option value="" disabled selected>Select Month...</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>School / Site Name</label>
+      <select name="SchoolName" required>
+        <option value="" disabled selected>Select a school...</option>
+        <option value="Berrien Elementary School">Berrien Elementary School</option>
+        <option value="Berrien Middle School">Berrien Middle School</option>
+        <option value="Berrien High School">Berrien High School</option>
+        <option value="Berrien Primary School">Berrien Primary School</option>
+        <option value="Clyattville Elementary School">Clyattville Elementary School</option>
+        <option value="Cook Elementary School">Cook Elementary School</option>
+        <option value="Cook High School">Cook High School</option>
+        <option value="Cook Middle School">Cook Middle School</option>
+        <option value="Cook Performance Learning Center">Cook Performance Learning Center</option>
+        <option value="Cook Primary School">Cook Primary School</option>
+        <option value="Dewar Elementary School">Dewar Elementary School</option>
+        <option value="Echols Elementary/Middle School">Echols Elementary/Middle School</option>
+        <option value="Echols High School">Echols High School</option>
+        <option value="JL Lomax Elementary School">JL Lomax Elementary School</option>
+        <option value="JL Newbern Middle School">JL Newbern Middle School</option>
+        <option value="Lake Park Elementary School">Lake Park Elementary School</option>
+        <option value="Lowndes Middle School">Lowndes Middle School</option>
+        <option value="Moulton Branch Elementary School">Moulton Branch Elementary School</option>
+        <option value="Pinevale Elementary School">Pinevale Elementary School</option>
+        <option value="Sallas Mahone Elementary School">Sallas Mahone Elementary School</option>
+        <option value="Tift County High School">Tift County High School</option>
+        <option value="Valdosta High School">Valdosta High School</option>
+        <option value="Valdosta Middle School">Valdosta Middle School</option>
+        <option value="Westside Elementary School">Westside Elementary School</option>
+        <option value="WG Nunn Elementary School">WG Nunn Elementary School</option>
+        <option value="Turner County Elementary School">Turner County Elementary School</option>
+        <option value="Lanier County Elementary School">Lanier County Elementary School</option>
+        <option value="Lanier County Middle School">Lanier County Middle School</option>
+        <option value="Lanier County High School">Lanier County High School</option>
+      </select>
+    </div>
+
+    <h2>Administrative Services</h2>
+    <p>Please indicate the administrative services provided for this current reporting period.</p>
+    <div class="checkbox-grid">
+      <label class="checkbox-item"><input type="checkbox" name="Admin_CallsCaregiver" value="Yes"> Calls, meetings, or check-ins with caregiver/family</label>
+      <label class="checkbox-item"><input type="checkbox" name="Admin_CallsState" value="Yes"> Calls, meetings, or check-ins with state entities (DFCS, DJJ, etc.)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Admin_CallsSchool" value="Yes"> Calls, meetings, or check-ins with Teacher/school staff</label>
+      <label class="checkbox-item"><input type="checkbox" name="Admin_Intake" value="Yes"> Initial consultation (scheduling/intake)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Admin_Insurance" value="Yes"> Insurance Authorization</label>
+    </div>
+    <div class="form-group" style="margin-top:10px;">
+      <label>Other Administrative Services (Specify):</label>
+      <input type="text" name="Admin_Other_Desc">
+    </div>
+
+    <h2>Tier 1 Services</h2>
+    
+    <div class="form-group" style="background: #eef2f7; padding: 15px; border-radius: 5px;">
+      <label style="font-size: 1.1em;">Were Tier 1 Services Provided in the reported school during the reporting Month?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Tier1_Provided" value="Yes" onclick="toggleSection('tier1-details', true)"> Yes</label>
+        <label><input type="radio" name="Tier1_Provided" value="No" onclick="toggleSection('tier1-details', false)"> No</label>
+      </div>
+    </div>
+
+    <div id="tier1-details" style="display:none; border-left: 4px solid #28a745; padding-left: 15px; margin-top: 15px;">
+      <div class="form-group">
+        <label>Please select who provided Tier 1 Services:</label>
+        <select name="Tier1_Provider">
+          <option value="">Select...</option>
+          <option value="Agency Staff">Agency Staff</option>
+          <option value="Both Agency and School Staff">Both Agency staff and school staff</option>
+        </select>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <tr>
+            <th>Tier 1 Service Type</th>
+            <th style="width:150px;"># of Services Provided</th>
+          </tr>
+          <tr><td>Classroom Observation (Observing entire class)</td><td><input type="number" name="T1_ClassroomObs"></td></tr>
+          <tr><td>Faculty Consultation for school-wide needs</td><td><input type="number" name="T1_FacultyConsult"></td></tr>
+          <tr><td>In-service trainings on mental health (incl. youth MHFA)</td><td><input type="number" name="T1_Trainings"></td></tr>
+          <tr><td>Mental Health Awareness events (suicide prevention, etc.)</td><td><input type="number" name="T1_AwarenessEvents"></td></tr>
+          <tr><td>Parent education</td><td><input type="number" name="T1_ParentEd"></td></tr>
+          <tr><td>School Events (Assemblies, field days, etc.)</td><td><input type="number" name="T1_SchoolEvents"></td></tr>
+          <tr><td>School Risk assessment</td><td><input type="number" name="T1_RiskAssess"></td></tr>
+          <tr><td>Staff Meetings</td><td><input type="number" name="T1_StaffMeetings"></td></tr>
+          <tr><td>Student Services Team Staffing</td><td><input type="number" name="T1_TeamStaffing"></td></tr>
+          <tr><td>Support Groups for at risk students</td><td><input type="number" name="T1_SupportGroups"></td></tr>
+          <tr>
+            <td>Other (Specify): <input type="text" name="T1_Other_Desc" placeholder="Type here..."></td>
+            <td><input type="number" name="T1_Other_Count"></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="form-group" style="margin-top:15px;">
+        <label>Of the total in-service trainings on mental health, how many were Youth Mental Health First Aid?</label>
+        <input type="number" name="T1_YMHFA_Count" style="width:150px; text-align:left; padding-left:10px;">
+      </div>
+    </div>
+
+    <h2>Referrals</h2>
+    <p>Indicate total students referred and first-time students referred by source.</p>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Referral Source</th>
+          <th>Total Students Referred</th>
+          <th>First Time Students Referred</th>
+        </tr>
+        <tr><td>Caregiver</td><td><input type="number" name="Ref_Caregiver_Total"></td><td><input type="number" name="Ref_Caregiver_New"></td></tr>
+        <tr><td>Inpatient care provider</td><td><input type="number" name="Ref_Inpatient_Total"></td><td><input type="number" name="Ref_Inpatient_New"></td></tr>
+        <tr><td>LIPT</td><td><input type="number" name="Ref_LIPT_Total"></td><td><input type="number" name="Ref_LIPT_New"></td></tr>
+        <tr><td>Nurse</td><td><input type="number" name="Ref_Nurse_Total"></td><td><input type="number" name="Ref_Nurse_New"></td></tr>
+        <tr><td>OP Provider (Inc. internal agency referrals)</td><td><input type="number" name="Ref_OP_Total"></td><td><input type="number" name="Ref_OP_New"></td></tr>
+        <tr><td>Peer/Friend</td><td><input type="number" name="Ref_Peer_Total"></td><td><input type="number" name="Ref_Peer_New"></td></tr>
+        <tr><td>PCP</td><td><input type="number" name="Ref_PCP_Total"></td><td><input type="number" name="Ref_PCP_New"></td></tr>
+        <tr><td>School Administration</td><td><input type="number" name="Ref_Admin_Total"></td><td><input type="number" name="Ref_Admin_New"></td></tr>
+        <tr><td>School Counselor</td><td><input type="number" name="Ref_Counselor_Total"></td><td><input type="number" name="Ref_Counselor_New"></td></tr>
+        <tr><td>School Psychologist</td><td><input type="number" name="Ref_Psych_Total"></td><td><input type="number" name="Ref_Psych_New"></td></tr>
+        <tr><td>School Support Staff</td><td><input type="number" name="Ref_Support_Total"></td><td><input type="number" name="Ref_Support_New"></td></tr>
+        <tr><td>Self-Referral</td><td><input type="number" name="Ref_Self_Total"></td><td><input type="number" name="Ref_Self_New"></td></tr>
+        <tr><td>Social Worker</td><td><input type="number" name="Ref_SocialWorker_Total"></td><td><input type="number" name="Ref_SocialWorker_New"></td></tr>
+        <tr><td>State Entity</td><td><input type="number" name="Ref_State_Total"></td><td><input type="number" name="Ref_State_New"></td></tr>
+        <tr><td>Teacher</td><td><input type="number" name="Ref_Teacher_Total"></td><td><input type="number" name="Ref_Teacher_New"></td></tr>
+        <tr>
+          <td>Other (Specify): <input type="text" name="Ref_Other_Desc"></td>
+          <td><input type="number" name="Ref_Other_Total"></td>
+          <td><input type="number" name="Ref_Other_New"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="form-group" style="margin-top: 15px;">
+      <label>How many students could not be accepted for services or refused services?</label>
+      <input type="number" name="Ref_Refused_Count" style="width:150px; text-align:left; padding-left:10px;">
+    </div>
+    <div class="form-group">
+      <label>Please indicate how many referrals to EXTERNAL services you provided (e.g., another agency, Clubhouses):</label>
+      <input type="number" name="Ref_External_Count" style="width:150px; text-align:left; padding-left:10px;">
+    </div>
+
+    <h2>Tier 2 Services</h2>
+    <div class="form-group" style="background: #eef2f7; padding: 15px; border-radius: 5px;">
+      <label style="font-size: 1.1em;">Were Tier 2 services provided in the school during the reporting month?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="Tier2_Provided" value="Yes" onclick="toggleSection('tier2-details', true)"> Yes</label>
+        <label><input type="radio" name="Tier2_Provided" value="No" onclick="toggleSection('tier2-details', false)"> No</label>
+      </div>
+    </div>
+
+    <div id="tier2-details" style="display:none; border-left: 4px solid #28a745; padding-left: 15px; margin-top: 15px;">
+      <div class="form-group">
+        <label>Please select who provided Tier 2 services:</label>
+        <select name="Tier2_Provider">
+          <option value="">Select...</option>
+          <option value="Agency Staff">Agency Staff</option>
+          <option value="Both Agency and School Staff">Both Agency staff and school staff</option>
+        </select>
+      </div>
+
+      <p><em>Indicate the number of Tier 2 SBMH services provided by service type.</em></p>
+      <div class="table-wrapper">
+        <table>
+          <tr>
+            <th style="min-width: 250px;">Service Type</th>
+            <th>In School</th>
+            <th>Home</th>
+            <th>Clinic</th>
+            <th>Telehealth</th>
+            <th>Community</th>
+            <th>Other</th>
+            <th>First-Time Students</th>
+          </tr>
+          <tr>
+            <td>Behavioral Health Assessment</td>
+            <td><input type="number" name="T2_Assess_School"></td>
+            <td><input type="number" name="T2_Assess_Home"></td>
+            <td><input type="number" name="T2_Assess_Clinic"></td>
+            <td><input type="number" name="T2_Assess_Tele"></td>
+            <td><input type="number" name="T2_Assess_Comm"></td>
+            <td><input type="number" name="T2_Assess_Other"></td>
+            <td><input type="number" name="T2_Assess_New"></td>
+          </tr>
+          <tr>
+            <td>Certified Peer Support (Parent or Youth)</td>
+            <td><input type="number" name="T2_Peer_School"></td>
+            <td><input type="number" name="T2_Peer_Home"></td>
+            <td><input type="number" name="T2_Peer_Clinic"></td>
+            <td><input type="number" name="T2_Peer_Tele"></td>
+            <td><input type="number" name="T2_Peer_Comm"></td>
+            <td><input type="number" name="T2_Peer_Other"></td>
+            <td><input type="number" name="T2_Peer_New"></td>
+          </tr>
+          <tr>
+            <td>Classroom observation (individual)</td>
+            <td><input type="number" name="T2_Obs_School"></td>
+            <td><input type="number" name="T2_Obs_Home"></td>
+            <td><input type="number" name="T2_Obs_Clinic"></td>
+            <td><input type="number" name="T2_Obs_Tele"></td>
+            <td><input type="number" name="T2_Obs_Comm"></td>
+            <td><input type="number" name="T2_Obs_Other"></td>
+            <td><input type="number" name="T2_Obs_New"></td>
+          </tr>
+          <tr>
+            <td>Group Outpatient Services</td>
+            <td><input type="number" name="T2_Group_School"></td>
+            <td><input type="number" name="T2_Group_Home"></td>
+            <td><input type="number" name="T2_Group_Clinic"></td>
+            <td><input type="number" name="T2_Group_Tele"></td>
+            <td><input type="number" name="T2_Group_Comm"></td>
+            <td><input type="number" name="T2_Group_Other"></td>
+            <td><input type="number" name="T2_Group_New"></td>
+          </tr>
+          <tr>
+            <td>IEP/504 Meeting Attendance</td>
+            <td><input type="number" name="T2_IEP_School"></td>
+            <td><input type="number" name="T2_IEP_Home"></td>
+            <td><input type="number" name="T2_IEP_Clinic"></td>
+            <td><input type="number" name="T2_IEP_Tele"></td>
+            <td><input type="number" name="T2_IEP_Comm"></td>
+            <td><input type="number" name="T2_IEP_Other"></td>
+            <td><input type="number" name="T2_IEP_New"></td>
+          </tr>
+          <tr>
+            <td>RTI assessment/Supports</td>
+            <td><input type="number" name="T2_RTI_School"></td>
+            <td><input type="number" name="T2_RTI_Home"></td>
+            <td><input type="number" name="T2_RTI_Clinic"></td>
+            <td><input type="number" name="T2_RTI_Tele"></td>
+            <td><input type="number" name="T2_RTI_Comm"></td>
+            <td><input type="number" name="T2_RTI_Other"></td>
+            <td><input type="number" name="T2_RTI_New"></td>
+          </tr>
+          <tr>
+            <td>Service plan development</td>
+            <td><input type="number" name="T2_Plan_School"></td>
+            <td><input type="number" name="T2_Plan_Home"></td>
+            <td><input type="number" name="T2_Plan_Clinic"></td>
+            <td><input type="number" name="T2_Plan_Tele"></td>
+            <td><input type="number" name="T2_Plan_Comm"></td>
+            <td><input type="number" name="T2_Plan_Other"></td>
+            <td><input type="number" name="T2_Plan_New"></td>
+          </tr>
+          <tr>
+            <td>Targeted Screening (PHQ-9, GAD-7, etc)</td>
+            <td><input type="number" name="T2_Screen_School"></td>
+            <td><input type="number" name="T2_Screen_Home"></td>
+            <td><input type="number" name="T2_Screen_Clinic"></td>
+            <td><input type="number" name="T2_Screen_Tele"></td>
+            <td><input type="number" name="T2_Screen_Comm"></td>
+            <td><input type="number" name="T2_Screen_Other"></td>
+            <td><input type="number" name="T2_Screen_New"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <h2>Curricula & Interventions</h2>
+    
+    <h3>Curricula Used for Tier 1 Activities</h3>
+    <div class="checkbox-grid">
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="7 Mindsets"> 7 Mindsets</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Community Resiliency Model (CRM)"> Community Resiliency Model (CRM)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Community School Model"> Community School Model</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Connections Matter"> Connections Matter</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Darkness to Light"> Darkness to Light</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Green Dot Bystander Intervention"> Green Dot Bystander Intervention</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Hope Givers Live!"> Hope Givers Live!</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Mental Health First Aid"> Mental Health First Aid</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Opioid Prevention Campaign"> Opioid Prevention Campaign</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Positive Behavioral Interventions"> Positive Behavioral Interventions</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Think First & Stay Safe"> Think First & Stay Safe</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Trauma-informed practices"> Trauma-informed practices</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Reaching Teens"> Reaching Teens</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Restorative Practices"> Restorative Practices</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Social-emotional learning (SEL)"> Social-emotional learning (SEL)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="Sources of Strength"> Sources of Strength</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="SOS Signs of Suicide"> SOS Signs of Suicide</label>
+      <label class="checkbox-item"><input type="checkbox" name="Curricula" value="None utilized"> None utilized</label>
+    </div>
+    <div class="form-group" style="margin-top:10px;">
+        <label>Other Curricula:</label>
+        <input type="text" name="Curricula_Other">
+    </div>
+
+    <h3>Treatment Interventions (Tier 2/3)</h3>
+    <div class="checkbox-grid">
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Art Therapy"> Art Therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Attachment-based family therapy"> Attachment-based family therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Child-parent psychotherapy"> Child-parent psychotherapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="CBT"> Cognitive-behavioral therapy (CBT)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="DBT"> Dialectical behavior therapy (DBT)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Experiential Therapy"> Experiential Therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Functional Family Therapy"> Functional Family Therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Internal family systems"> Internal family systems (IFS)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Mindfulness"> Mindfulness</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Motivational Interviewing"> Motivational Interviewing (MI)</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="MDFT"> Multi-dimension family therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="MST"> Mult-systemic therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Narrative therapy"> Narrative therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="PCIT"> Parent-child interaction therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Play therapy"> Play therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="Solution-focused therapy"> Solution-focused (brief) therapy</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="TIP"> Transition to independent process</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="TF-CBT"> Trauma focused CBT</label>
+      <label class="checkbox-item"><input type="checkbox" name="Intervention" value="None utilized"> None utilized</label>
+    </div>
+    <div class="form-group" style="margin-top:10px;">
+        <label>Other Interventions:</label>
+        <input type="text" name="Intervention_Other">
+    </div>
+
+    <h2>Discharges</h2>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Reason for Discharge</th>
+          <th style="width:150px;">Number of Students</th>
+        </tr>
+        <tr><td>Caregiver/student no longer wanting services</td><td><input type="number" name="Discharge_Unwanted"></td></tr>
+        <tr><td>Completing treatment goals</td><td><input type="number" name="Discharge_Completed"></td></tr>
+        <tr><td>Insurance reasons</td><td><input type="number" name="Discharge_Insurance"></td></tr>
+        <tr><td>Lack of caregiver engagement</td><td><input type="number" name="Discharge_CaregiverEngage"></td></tr>
+        <tr><td>Lack of student engagement</td><td><input type="number" name="Discharge_StudentEngage"></td></tr>
+        <tr><td>Referred to different level of care</td><td><input type="number" name="Discharge_Referred"></td></tr>
+        <tr><td>Scheduled break</td><td><input type="number" name="Discharge_Break"></td></tr>
+        <tr><td>Withdrawing from school (move, grad, drop out)</td><td><input type="number" name="Discharge_Withdrew"></td></tr>
+        <tr><td>Other reasons</td><td><input type="number" name="Discharge_Other"></td></tr>
+      </table>
+    </div>
+
+    <h2>Additional Information</h2>
+    <div class="form-group">
+      <label>Is there any additional information not captured above? (Report school issues here)</label>
+      <textarea name="AdditionalInfo"></textarea>
+    </div>
+
+    <div class="form-group" style="background: #fff3cd; padding: 15px; border: 1px solid #ffeeba; border-radius: 4px; margin-bottom: 20px; margin-top:30px;">
+      <label style="color: #856404; font-weight:bold;">Provider Access PIN (Required)</label>
+      <p style="margin:5px 0 10px; font-size:0.9em;">Please enter the security PIN provided by the Compliance Officer.</p>
+      <input type="password" id="accessPin" placeholder="Enter PIN..." style="width: 200px; padding: 8px;">
+    </div>
+
+    <button type="submit" class="btn-submit">Submit Report</button>
+    <div id="loading">Submitting to Database... please wait.</div>
+
+  </form>
+</div>
+
+<script>
+  // Toggle Logic for Tier 1 & Tier 2
+  function toggleSection(id, show) {
+    document.getElementById(id).style.display = show ? 'block' : 'none';
+  }
+
+  // !!! PASTE YOUR GOOGLE SCRIPT URL BELOW !!!
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxfzCjMlonmQe7jLGNhkvtgGhMP8zx865YOZQ0q5lTbuoSGTLAU-kS79a-Q_fsuCbmE/exec';
+  
+  const form = document.forms['reportForm'];
+  const loading = document.getElementById('loading');
+  const btn = document.querySelector('.btn-submit');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // 1. PIN Check
+    const userPin = document.getElementById('accessPin').value;
+    const correctPin = "Apex2026"; // <--- YOUR PIN IS SET HERE
+    if (userPin !== correctPin) {
+        alert("Incorrect PIN. You cannot submit this report.");
+        return; 
+    }
+
+    // 2. URL Check
+    if(scriptURL.includes('PASTE_YOUR')) {
+        alert("Please configure the Google Script URL in the code first.");
+        return;
+    }
+
+    loading.style.display = 'block';
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    
+    // 3. Prepare Data
+    const formData = new FormData(form);
+    const plainFormData = Object.fromEntries(formData.entries());
+    
+    // Join arrays for multi-select checkboxes
+    const curricula = formData.getAll("Curricula").join(", ");
+    const interventions = formData.getAll("Intervention").join(", ");
+    
+    plainFormData.Curricula = curricula;
+    plainFormData.Intervention = interventions;
+
+    // 4. Send to Google
+    const params = new URLSearchParams(plainFormData);
+
+    fetch(scriptURL, { method: 'POST', body: params, mode: 'no-cors' })
+      .then(response => {
+        alert("Report Submitted Successfully!");
+        loading.style.display = 'none';
+        btn.disabled = false;
+        btn.textContent = "Submit Report";
+        
+        // Reset form and hide sections
+        form.reset();
+        toggleSection('tier1-details', false);
+        toggleSection('tier2-details', false);
+        // Scroll to top
+        window.scrollTo(0,0);
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert("Error submitting form. Please check your internet connection.");
+        loading.style.display = 'none';
+        btn.disabled = false;
+        btn.textContent = "Submit Report";
+      });
+  });
+</script>
+
+</body>
+
+</html>
+
+
+
