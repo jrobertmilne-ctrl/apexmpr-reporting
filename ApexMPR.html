@@ -470,7 +470,7 @@
     // 4. Send to Google
     const params = new URLSearchParams(plainFormData);
 
-    fetch(scriptURL, { method: 'POST', body: params })
+    fetch(scriptURL, { method: 'POST', body: params, mode: 'no-cors' })
       .then(response => {
         alert("Report Submitted Successfully!");
         loading.style.display = 'none';
@@ -497,5 +497,6 @@
 </body>
 
 </html>
+
 
 
